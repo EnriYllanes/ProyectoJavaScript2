@@ -6,7 +6,7 @@
     <!-- emparejamiento con CSS -->
     <link rel="stylesheet" href="css/style.css"> 
     <!-- emparejamiento con JavaScript -->
-    <link rel="stylesheet" href="style/main.js">
+    <script src="style/main.js" defer></script>
     <title>SELECTO</title>
 </head>
 
@@ -52,16 +52,16 @@
     </main> -->
     
 
-    <main class="store" >
-        <div id="contenedor-productos"></div>
+    <main class="store">
+        <div id="contenedor-productos">
         <!-- PRIMERA FILA DE 4 PRODUCTOS -->
-        <!-- <div class="product-card">
+        <div class="product-card">
             <img src="img/2-2.jpg" alt="reme marron oscura">
             <h3>Day After Day</h3>
             <p>Remera Oversize - Algodon</p>
             <span class="price">$23.000</span>
             <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div> -->
+        </div>
         <div class="product-card">
             <img src="img/cargo1.jpg" alt="PANTALON CARGO">
             <h3>Cargo Oxided</h3>
@@ -83,7 +83,8 @@
             <span class="price">$54.000</span>
             <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
         </div>
-
+        </div>
+        <div id="contenedor-productos">
         <!-- SEGUNDA FILA DE 4 PRODUCTOS -->
         <div class="product-card"> 
             <img src="img/zapatilla1.jpg" alt="Zapas VANS">
@@ -108,11 +109,11 @@
         </div>
         <div class="product-card">
             <img src="img/gorra1.jpg" alt="Gorra marron2">
-            <h3>Visera Curva --- </h3>
+            <h3>Visera Curva</h3>
             <p>Gorra forrada en doble tela | Ajustable</p>
             <span class="price">$16.000</span>
             <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
+        </div></div>
     </main>
 
     <footer>
@@ -121,6 +122,8 @@ protegidos por derechos de autor que puedan ser realizados por terceros. Cada us
 leyes vigentes en materia de propiedad intelectual.
         </h3>
     </footer>
+
+
 
     <button id="cart-btn" class="cart-btn">🛒</button>
 
