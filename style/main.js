@@ -2,6 +2,8 @@ const cartBtn = document.getElementById('cart-btn');
 const cartPanel = document.getElementById('cart-panel');
 const contenedorProducto = document.getElementById("contenedor-productos");
 const contenedorCarrito = document.getElementById("cart-items");
+const vaciarCarritoBtn = document.getElementById("vaciar-carrito-btn");
+const comprarBtn = document.getElementById("comprar-btn");
 
 let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
 let dejoAbiertoElCarrito = JSON.parse(localStorage.getItem("carrito_open")) || false;
@@ -100,7 +102,6 @@ function activarBotones() {
             const idProducto = parseInt(boton.getAttribute("data-id"));
             const producto = products.find(p => p.id === idProducto);
 
-            // Opcional: si no quieres duplicados, checkea si ya está
             const existe = carrito.find(p => p.id === producto.id);
             if (!existe) {
                 carrito.push(producto);
@@ -120,20 +121,30 @@ function renderizarCarrito() {
 
     carrito.forEach((producto, index) => {
         const item = document.createElement("div");
-        item.classList.add("item-carrito");
+        item.classList.add("cart-item");
         item.innerHTML = `
-            <p>${producto.nombre} - $${producto.precio.toLocaleString()}</p>
+            <img src="${producto.imagen}" alt="${producto.nombre}">
+            <div class="nombre">${producto.nombre}</div>
+            <div class="precio">$${producto.precio.toLocaleString()}</div>
             <button class="eliminar-item" data-index="${index}">❌</button>
+            <button class="agregar-item" data-index="${index}">+</button>
+            <button class="eliminar-un-item" data-index="${index}">-</button>
         `;
         contenedorCarrito.appendChild(item);
+
         total += producto.precio;
     });
 
     const totalDiv = document.createElement("div");
-    totalDiv.innerHTML = `<strong>Total: $${total.toLocaleString()}</strong>`;
+    totalDiv.classList.add("cart-total");
+    totalDiv.innerHTML = `Total: $${total.toLocaleString()}`;
     contenedorCarrito.appendChild(totalDiv);
 
+    cartBtn.textContent = `🛒 (${total.toLocaleString()})`;
+
     activarEliminar();
+    activarAgregar();
+    activarEliminarUnItem();
 }
 
 function activarEliminar() {
@@ -147,6 +158,49 @@ function activarEliminar() {
         });
     });
 }
+
+function activarAgregar() {
+    const botonesAgregar = document.querySelectorAll(".agregar-item");
+    botonesAgregar.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const index = parseInt(boton.getAttribute("data-index"));
+            const producto = carrito[index];
+            carrito.push(producto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            renderizarCarrito();
+        });
+    });
+}
+
+function activarEliminarUnItem() {
+    const botonesEliminarUnItem = document.querySelectorAll(".eliminar-un-item");
+    botonesEliminarUnItem.forEach(boton => {
+        boton.addEventListener("click", () => {
+            const index = parseInt(boton.getAttribute("data-index"));
+            if (carrito.length > 1) {
+                carrito.splice(index, 1);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                renderizarCarrito();
+            } else {
+                alert("No puedes eliminar todos los productos del carrito.");
+            }
+        });
+    });
+}
+
+vaciarCarritoBtn.addEventListener("click", () => {
+    carrito = [];
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    renderizarCarrito();
+});
+
+comprarBtn.addEventListener("click", () => {
+    alert("Compra realizada con éxito!");
+    console.log(carrito);
+    carrito = [];
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+    renderizarCarrito();
+});
 
 renderizarCards();
 renderizarCarrito();

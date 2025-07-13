@@ -21,7 +21,6 @@ header {
     margin-bottom: 1rem;
 }
 
-
 .product-card img {
     width: 200px;
     height: 210px;
@@ -31,11 +30,11 @@ header {
 
 .store {
     background-color: aliceblue;
-    flex-wrap: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 2rem;
     padding: 2rem;
-    justify-items: center;
 }
 
 .product-card {
@@ -93,10 +92,10 @@ header {
 .cart-panel {
     position: fixed;
     top: 0;
-    right: -200px;
+    right: -300px;
     width: 300px;
-    max-width: 320px;    
-    height: 300px;
+    max-width: 320px;
+    height: 100vh;
     background-color: #F0F8FF;
     box-shadow: -4px 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.9s ease-in-out;
@@ -113,27 +112,73 @@ header {
 }
 
 .cart-items {
-    font-size: 0.95rem;
-    color: #333;
+    padding: 20px;
 }
 
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.cart-item img {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.cart-item .nombre {
+    font-weight: bold;
+}
+
+.cart-item .precio {
+    font-size: 14px;
+    color: #666;
+}
+
+.cart-total {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.comprar-btn {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comprar-btn:hover {
+    background-color: #3e8e41;
+}
+
+.vaciar-carrito-btn {
+    background-color: #30455B;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 12px;
+    cursor: pointer;
+}
 
 #contenedor-productos {
-    display: flex; 
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     padding: 2rem;
 }
 
-footer{
+footer {
     text-align: center;
-    color:#969696;
+    color: #969696;
     margin: 1rem;
-    padding:1rem;
+    padding: 1rem;
     font-size: 0.60rem;
     width: 80%;
     margin: 0 auto;
     padding: 2rem 0;
 }
-

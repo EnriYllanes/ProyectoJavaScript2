@@ -3,143 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- emparejamiento con CSS -->
-    <link rel="stylesheet" href="css/style.css"> 
-    <!-- emparejamiento con JavaScript -->
-    <script src="style/main.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
     <title>SELECTO</title>
 </head>
-
 <body>
     <header>
         <div class="LogoHeader">
             <a href="index.html"><img src="img/logo1.png" alt="logo SELECTO"></a>
         </div>
     </header>
-
-
-    <!-- <main class="store">
-        <h1>Selecto Indumentaria !!</h1>
-
-        <div>
-            <img class="ropa" src="img/2-3.jpg" alt="Remera marron claro">
-            <img class="ropa" src="img/2-4.jpg" alt="Remera Negra">
-            <img class="ropa" src="img/2-5.jpg" alt="Remera Gris">
-            <img class="ropa" src="img/2-2.jpg" alt="Remera Marron">
-        </div>
-
-        <div>
-            <img class="ropa" src="img/3-1.jpg" alt="">
-            <img class="ropa" src="img/3-2.jpg" alt="">
-            <img class="ropa" src="img/cargo1.jpg" alt="">
-            <img class="ropa" src="img/cargo2.jpg" alt="">
-        </div>
-
-        <div>
-            <img class="ropa" src="img/gorra2.jpg" alt="">
-            <img class="ropa" src="img/5-0.jpg" alt="">
-            <img class="ropa" src="img/gorra1.jpg" alt="">
-            <img class="ropa" src="img/5-1.jpg" alt="">            
-        </div>
-
-        <div>
-            <img class="ropa" src="img/zapatilla3.png" alt="">
-            <img class="ropa" src="img/zapavestir3.jpg" alt="">
-            <img class="ropa" src="img/zapatilla1.jpg" alt="">
-            <img class="ropa" src="img/zapavestir1.jpg" alt="">
-        </div>
-
-    </main> -->
-    
-
     <main class="store">
-        <div id="contenedor-productos">
-        <!-- PRIMERA FILA DE 4 PRODUCTOS -->
-        <div class="product-card">
-            <img src="img/2-2.jpg" alt="reme marron oscura">
-            <h3>Day After Day</h3>
-            <p>Remera Oversize - Algodon</p>
-            <span class="price">$23.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/cargo1.jpg" alt="PANTALON CARGO">
-            <h3>Cargo Oxided</h3>
-            <p>Cargo de Jean Mom</p>
-            <span class="price">$50.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/2-3.jpg" alt="reme marron clara">
-            <h3>iets Frans</h3>
-            <p>Remera Regular - Algodon</p>
-            <span class="price">$16.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/cargo2.jpg" alt="PANTALON CARGO 2">
-            <h3>Cargo Baggy</h3>
-            <p>Cargo de Jean Marron</p>
-            <span class="price">$54.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        </div>
-        <div id="contenedor-productos">
-        <!-- SEGUNDA FILA DE 4 PRODUCTOS -->
-        <div class="product-card"> 
-            <img src="img/zapatilla1.jpg" alt="Zapas VANS">
-            <h3>Vans knu Skool</h3>
-            <p>Zapas de Gamuza</p>
-            <span class="price">$130.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/gorra2.jpg" alt="Gorra A. Marron">
-            <h3>Visera Curva A.</h3>
-            <p>Gorra importada A. | curva | Cerrada</p>
-            <span class="price">$28.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/zapatilla3.png" alt="ZAPAS BLANCAS Y NEGRO">
-            <h3>Zapas Vuitton</h3>
-            <p>Zapatillas de Cuero</p>
-            <span class="price">$120.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div>
-        <div class="product-card">
-            <img src="img/gorra1.jpg" alt="Gorra marron2">
-            <h3>Visera Curva</h3>
-            <p>Gorra forrada en doble tela | Ajustable</p>
-            <span class="price">$16.000</span>
-            <button id="add-to-cart-btn" class="add-to-cart">Agregar al Carrito</button>
-        </div></div>
+        <div id="contenedor-productos"></div>
     </main>
-
     <footer>
         <h3>Esta página web no se hace responsable por el uso, reproducción, distribución o difusión no autorizada de materiales 
-protegidos por derechos de autor que puedan ser realizados por terceros. Cada usuario es responsable de respetar las 
-leyes vigentes en materia de propiedad intelectual.
-        </h3>
+            protegidos por derechos de autor que puedan ser realizados por terceros. Cada usuario es responsable de respetar las 
+            leyes vigentes en materia de propiedad intelectual.</h3>
     </footer>
-
-
-
     <button id="cart-btn" class="cart-btn">🛒</button>
-
     <aside id="cart-panel" class="cart-panel">
-        <h2>Tu Carrito</h2>
-        <div id="cart-items" class="cart-items"></div>
-    </aside>
-
-
-
-
-
-
-
-
-    <script src="style/main.js"></script>
-
+    <h2>Tu Carrito</h2>
+    <div id="cart-items" class="cart-items"></div>
+    <div id="cart-total" class="cart-total"></div>
+    <button id="comprar-btn" class="comprar-btn">Comprar</button>
+    <button id="vaciar-carrito-btn" class="vaciar-carrito-btn">Vaciar Carrito</button>
+</aside>
+    <script src="style/main.js" defer></script>
 </body>
 </html>
